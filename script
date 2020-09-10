@@ -1,0 +1,34 @@
+const interval = setInterval(function() {
+    var problem = document.getElementsByClassName("card-title");
+    for (var i = 0; i < problem.length; i++) {
+      var prob = problem[i].innerText;
+    var pr = prob.replace(" x ", "-");
+     var splits =  pr.split("-",2)
+      var answer = splits[0]*splits[1]
+      console.log(answer)
+    }    
+    var a = document.getElementsByClassName('card-button')[0].innerText;
+    b = document.getElementsByClassName('card-button')[1].innerText;
+    c = document.getElementsByClassName('card-button')[2].innerText;
+    d = document.getElementsByClassName('card-button')[3].innerText;
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+    
+    console.log("The Answer Should be: " + answer)
+    if (a == answer) {
+        document.getElementsByClassName('card-button')[0].click();
+    }
+     else if (b == answer){
+        document.getElementsByClassName('card-button')[1].click();
+    }
+   else if (c == answer){
+    document.getElementsByClassName('card-button')[2].click();
+    }
+  else  if (d == answer){
+    document.getElementsByClassName('card-button')[3].click();
+    } else {
+      console.log("No Answer Found") 
+    }
+  }, 2000);
